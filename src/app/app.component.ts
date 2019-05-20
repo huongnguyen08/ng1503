@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
     <h2>Hello Angular</h2>
     <p>{{title}}</p>
     <p>{{title}}</p>
-    <app-user></app-user>
   `,
   // styleUrls: ['./app.component.css']
   styles: [

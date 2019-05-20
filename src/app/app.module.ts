@@ -15,6 +15,6 @@ import { UserComponent } from './components/user.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, UserComponent]
 })
 export class AppModule { }
