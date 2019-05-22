@@ -4,8 +4,9 @@ import { Component } from '@angular/core';
   selector: '.app-root',
   // templateUrl: './app.component.html',
   template: `
-    <h2>Hello Angular</h2>
-    <p>{{title}}</p>
+    <h2>App Component</h2>
+    <app-hero></app-hero>
+
   `,
   // styleUrls: ['./app.component.css']
   styles: [
