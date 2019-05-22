@@ -32,6 +32,14 @@ import { Component } from '@angular/core';
         <input #myInput02
         (keyup)="getDataInput(myInput02.value)" placeholder="Enter your name">
         <p>{{myInput02.value}}</p>
+
+        <hr>
+
+        <!-- two way binding -->
+        <!-- import FormModule into app.module.ts -->
+        <input [(ngModel)]="myInput03" placeholder="Enter your name">
+        <p>{{myInput03}}</p>
+
         <br><br><br><br><br><br><br>
     `
     ,
