@@ -25,7 +25,8 @@ import { Component } from '@angular/core';
 
         <!-- event binding -->
         <button (click)="onClickButton(myInput)">Click me!</button>
-
+        <p>{{myInput.value}}</p>
+        <p>{{dataInput}}</p>
 
 
         <br><br><br><br><br><br><br>
@@ -63,10 +64,12 @@ export class UserComponent {
         'text-bold': true
     };
 
+    dataInput: string;
+
     constructor() {
     }
-    onClickButton(data) {
-        console.log(data.value);
+    onClickButton(data: any) {
+        this.dataInput = data.value;
     }
 }
 
