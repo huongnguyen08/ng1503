@@ -17,7 +17,14 @@ import { Component } from '@angular/core';
         <!-- property binding -->
         <p [id]="myId">Your name</p>
         <p [class]="myClass">Your name</p>
-        <input [disabled]='isDisabled'  value="KPT" placeholder="Enter your name">
+        <input
+        [disabled]='isDisabled'
+        #myInput
+        value="KPT"
+        placeholder="Enter your name">
+
+        <!-- event binding -->
+        <button (click)="onClickButton(myInput)">Click me!</button>
 
 
 
@@ -45,7 +52,7 @@ export class UserComponent {
     blueColor = 'blue';
     myId = 'your-name';
     myClass = 'text-danger text-bold';
-    isDisabled = true;
+    isDisabled = false;
     myStyle = {
         color: 'red',
         'text-transform': 'uppercase',
@@ -58,4 +65,8 @@ export class UserComponent {
 
     constructor() {
     }
+    onClickButton(data) {
+        console.log(data.value);
+    }
 }
+
