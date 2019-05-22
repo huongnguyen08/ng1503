@@ -27,8 +27,11 @@ import { Component } from '@angular/core';
         <button (click)="onClickButton(myInput)">Click me!</button>
         <p>{{myInput.value}}</p>
         <p>{{dataInput}}</p>
+        <hr>
 
-
+        <input #myInput02
+        (keyup)="getDataInput(myInput02.value)" placeholder="Enter your name">
+        <p>{{myInput02.value}}</p>
         <br><br><br><br><br><br><br>
     `
     ,
@@ -70,6 +73,9 @@ export class UserComponent {
     }
     onClickButton(data: any) {
         this.dataInput = data.value;
+    }
+    getDataInput(data: string) {
+        // console.log(data);
     }
 }
 
