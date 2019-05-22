@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
         <p [style.color]="1==2 ? redColor : blueColor" >Your name</p>
 
         <p [ngStyle]="myStyle">Teo</p>
-
+        <p [ngClass]="newClass">ngClass</p>
 
         <!-- property binding -->
         <p [id]="myId">Your name</p>
@@ -50,6 +50,10 @@ export class UserComponent {
         color: 'red',
         'text-transform': 'uppercase',
         fontSize: '30px'
+    };
+    newClass = {
+        'text-danger': true,
+        'text-bold': true
     };
 
     constructor() {
