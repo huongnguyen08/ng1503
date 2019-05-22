@@ -11,10 +11,14 @@ import { Component } from '@angular/core';
         <!-- style binding -->
         <p [style.color]="1==2 ? redColor : blueColor" >Your name</p>
 
+        <p [ngStyle]="myStyle">Teo</p>
+
+
         <!-- property binding -->
         <p [id]="myId">Your name</p>
         <p [class]="myClass">Your name</p>
         <input [disabled]='isDisabled'  value="KPT" placeholder="Enter your name">
+
 
 
         <br><br><br><br><br><br><br>
@@ -42,6 +46,11 @@ export class UserComponent {
     myId = 'your-name';
     myClass = 'text-danger text-bold';
     isDisabled = true;
+    myStyle = {
+        color: 'red',
+        'text-transform': 'uppercase',
+        fontSize: '30px'
+    };
 
     constructor() {
     }
