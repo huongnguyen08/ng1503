@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -14,13 +14,16 @@ export class SignupComponent implements OnInit {
       email: new FormControl('',
         [
           Validators.required,
-          Validators.email
+          // Validators.email,
+          isGmail
         ]
       ),
       fullname: new FormControl('',
         Validators.minLength(6)
       ),
-      phone: new FormControl(''),
+      phone: new FormControl('',
+        // Validators.pattern(/^[0-9]+$/)
+      ),
       fullAddress: new FormGroup({
         address: new FormControl(''),
         province: new FormControl(''),
@@ -45,5 +48,13 @@ export class SignupComponent implements OnInit {
     }
     return true;
   }
+
+}
+
+function isGmail(control: AbstractControl): ValidationErrors | null {
+  if ((control.value as string).trim().endsWith('@gmail.com')) {
+    return null; // valid
+  }
+  return {error: 'Email invalid'};
 
 }

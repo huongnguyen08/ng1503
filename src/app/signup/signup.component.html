@@ -32,6 +32,9 @@
           formControlName="phone"
           class="form-control"  
           placeholder="Enter phone">
+          <small *ngIf="!validatorInput('phone')" class="text-danger">
+            * Phone number invalid
+          </small>
         </div>
         <div formGroupName="fullAddress">
           <div class="form-group">
