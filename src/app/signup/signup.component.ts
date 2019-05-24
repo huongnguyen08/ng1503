@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +11,12 @@ export class SignupComponent implements OnInit {
 
   constructor() {
     this.formSignup = new FormGroup({
-      email: new FormControl(''),
+      email: new FormControl('',
+        [
+          Validators.required,
+          Validators.email
+        ]
+      ),
       fullname: new FormControl(''),
       phone: new FormControl(''),
       fullAddress: new FormGroup({
@@ -30,6 +35,13 @@ export class SignupComponent implements OnInit {
     console.log(data);
     // const email = this.formSignup.get('email').value;
     // console.log(email);
+  }
+  validatorEmail(): boolean {
+    const email = this.formSignup.get('email');
+    if (email.invalid && email.touched) {
+      return false;
+    }
+    return true;
   }
 
 }

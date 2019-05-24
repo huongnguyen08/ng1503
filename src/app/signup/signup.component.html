@@ -12,6 +12,9 @@
           formControlName="email"
            class="form-control" 
            placeholder="Enter email">
+           <small *ngIf="!validatorEmail()" class="text-danger">
+             * Email invalid
+           </small>
         </div>
         <div class="form-group">
           <label>Fullname: </label>
