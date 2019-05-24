@@ -12,7 +12,10 @@ export class SignupComponent implements OnInit {
   constructor() {
     this.formSignup = new FormGroup({
       email: new FormControl(''),
-      fullname: new FormControl('KPT')
+      fullname: new FormControl(''),
+      phone: new FormControl(''),
+      password: new FormControl(''),
+      passwordConfirmation: new FormControl('')
     });
   }
 

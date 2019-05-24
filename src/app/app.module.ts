@@ -22,6 +22,6 @@ import { SignupComponent } from './signup/signup.component';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent, UserComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
