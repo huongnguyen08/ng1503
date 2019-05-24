@@ -7,13 +7,15 @@ import { UserComponent } from './components/user.component';
 import { FormsModule } from '@angular/forms';
 import { HeroComponent } from './components/hero.component';
 import { TestComponent } from './test/test.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     HeroComponent,
-    TestComponent
+    TestComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

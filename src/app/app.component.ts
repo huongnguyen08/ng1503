@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: '.app-root',
-  // templateUrl: './app.component.html',
-  template: `
-    <h2>App Component</h2>
-    <app-hero></app-hero>
-
-  `,
+  templateUrl: './app.component.html',
+  // template: `
+  //   <h2>App Component</h2>
+  //   <!-- <app-hero></app-hero> -->
+  //   <app-signup></app-signup>
+  // `,
   // styleUrls: ['./app.component.css']
   styles: [
     `
