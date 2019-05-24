@@ -21,5 +21,9 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
+  getFormData() {
+    const data = this.formSignup.value;
+    console.log(data);
+  }
 
 }
