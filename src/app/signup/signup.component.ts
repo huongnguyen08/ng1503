@@ -28,6 +28,8 @@ export class SignupComponent implements OnInit {
   getFormData() {
     const data = this.formSignup.value;
     console.log(data);
+    // const email = this.formSignup.get('email').value;
+    // console.log(email);
   }
 
 }
