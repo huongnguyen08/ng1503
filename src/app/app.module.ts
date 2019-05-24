@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './components/user.component';
 import { FormsModule } from '@angular/forms';
 import { HeroComponent } from './components/hero.component';
-import { TestComponent } from './test/test.component';
 import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
@@ -14,7 +13,6 @@ import { SignupComponent } from './signup/signup.component';
     AppComponent,
     UserComponent,
     HeroComponent,
-    TestComponent,
     SignupComponent
   ],
   imports: [
