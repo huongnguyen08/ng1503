@@ -17,7 +17,9 @@ export class SignupComponent implements OnInit {
           Validators.email
         ]
       ),
-      fullname: new FormControl(''),
+      fullname: new FormControl('',
+        Validators.minLength(6)
+      ),
       phone: new FormControl(''),
       fullAddress: new FormGroup({
         address: new FormControl(''),
@@ -36,9 +38,9 @@ export class SignupComponent implements OnInit {
     // const email = this.formSignup.get('email').value;
     // console.log(email);
   }
-  validatorEmail(): boolean {
-    const email = this.formSignup.get('email');
-    if (email.invalid && email.touched) {
+  validatorInput(inputName: string): boolean {
+    const input = this.formSignup.get(inputName);
+    if (input.invalid && input.touched) {
       return false;
     }
     return true;

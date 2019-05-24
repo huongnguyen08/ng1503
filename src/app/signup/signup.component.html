@@ -12,7 +12,7 @@
           formControlName="email"
            class="form-control" 
            placeholder="Enter email">
-           <small *ngIf="!validatorEmail()" class="text-danger">
+           <small *ngIf="!validatorInput('email')" class="text-danger">
              * Email invalid
            </small>
         </div>
@@ -22,6 +22,9 @@
           formControlName="fullname" 
           class="form-control"  
           placeholder="Enter your name">
+          <small *ngIf="!validatorInput('fullname')" class="text-danger">
+            * Fullname invalid
+          </small>
         </div>
         <div class="form-group">
           <label>Phone: </label>
