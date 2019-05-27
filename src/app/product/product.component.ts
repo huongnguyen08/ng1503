@@ -14,4 +14,15 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  setWishlist(id: string) {
+    const product: Product = this.products.find(p => p.id === id);
+    product.wishlist = !product.wishlist;
+  }
+  removeProduct(id: string) {
+    const index: number = this.products.findIndex( p =>  p.id === id);
+    if ( index >= 0 ) {
+      return this.products.splice(index, 1);
+    }
+    alert('Cannot find product!');
+  }
 }

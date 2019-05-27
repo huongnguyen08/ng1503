@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-
+      <button class="btn btn-success btn-add">Add</button>
       <div style="margin:20px" 
       *ngFor="let product of products">
         <div class="card">
@@ -14,10 +14,16 @@
               {{ product.price | number }}
             </p>
             <div class="button">
-              <a *ngIf="!product.wishlist" class="btn btn-primary">Add to Wishlist</a>
+              <a *ngIf="!product.wishlist" class="btn btn-primary" 
+              (click)="setWishlist(product.id)"
+              >Add to Wishlist</a>
               <a *ngIf="product.wishlist"
-               class="btn btn-warning">Remove to Wishlist</a>
-              <a class="btn btn-danger">Remove</a>
+               class="btn btn-warning"
+               (click)="setWishlist(product.id)"
+               >Remove to Wishlist</a>
+              <a class="btn btn-danger"
+              (click)="removeProduct(product.id)"
+              >Remove</a>
             </div>
           </div>
         </div>
