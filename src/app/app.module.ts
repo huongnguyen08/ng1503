@@ -7,13 +7,16 @@ import { UserComponent } from './components/user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroComponent } from './components/hero.component';
 import { SignupComponent } from './signup/signup.component';
+import { ProductComponent } from './product/product.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     HeroComponent,
-    SignupComponent
+    SignupComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
