@@ -48,7 +48,14 @@ export class SignupComponent implements OnInit {
     }
     return true;
   }
-
+  passwordMustMatch(): boolean {
+    const password = this.formSignup.get('password');
+    const rePassword = this.formSignup.get('passwordConfirmation');
+    if (password.valid && rePassword.touched && password.value !== rePassword.value) {
+      return false;
+    }
+    return true;
+  }
 }
 
 function isGmail(control: AbstractControl): ValidationErrors | null {
