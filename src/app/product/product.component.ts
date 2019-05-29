@@ -40,4 +40,11 @@ export class ProductComponent implements OnInit {
   toggleForm(): boolean {
     return this.isShowForm = !this.isShowForm;
   }
+  addProduct() {
+    const { name, price } = this.formAddProduct.value;
+    const id = Date.now().toString();
+    this.products.unshift({id, name, price, wishlist: false});
+    this.formAddProduct.setValue({ name: '', price: 0});
+    this.toggleForm();
+  }
 }

@@ -3,7 +3,9 @@
     <div class="col-6">
       <div style="margin:20px" *ngIf="isShowForm">
         <h2>Add Product</h2>
-        <form [formGroup]="formAddProduct">
+        <form 
+        [formGroup]="formAddProduct"
+        (submit)="addProduct()">
           <div class="form-group">
             <label class="col-sm-2">Name: </label>
             <input type="text" class="form-control" placeholder="Enter product name"
@@ -15,7 +17,7 @@
             formControlName="price">
           </div>
           <div class="form-group my-btn">
-            <input type="submit" class="btn btn-primary" value="ADD">
+            <input type="submit" class="btn btn-primary" value="ADD" [disabled]="formAddProduct.invalid">
             <input type="button" class="btn btn-danger" value="CANCEL"
             (click)="toggleForm()">
           </div>
