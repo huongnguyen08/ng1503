@@ -28,3 +28,11 @@ a{
     margin-top: 20px;
     margin-left: 20px;
 }
+.my-btn input{
+    float: left;
+    width: calc((100% - 20px) / 2);
+    margin-bottom: 20px
+}
+.my-btn input:last-child{
+    margin-left: 20px
+}
