@@ -9,6 +9,7 @@ import { Product, listProduct } from '../products-list';
 export class ProductComponent implements OnInit {
 
   products: Product[] = listProduct;
+  isShowForm = false;
 
   constructor() { }
   ngOnInit() {
@@ -24,5 +25,8 @@ export class ProductComponent implements OnInit {
       return this.products.splice(index, 1);
     }
     alert('Cannot find product!');
+  }
+  toggleForm(): boolean {
+    return this.isShowForm = !this.isShowForm;
   }
 }

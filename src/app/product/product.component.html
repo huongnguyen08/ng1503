@@ -1,25 +1,28 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-        <div style="margin:20px" >
-          <h2>Add Product</h2>
-          <form action="">
-            <div class="form-group">
-              <label class="col-sm-2">Name: </label>
-              <input type="text" class="form-control" placeholder="Enter product name">
-            </div>
-            <div class="form-group">
-              <label class="col-sm-2">Price: </label>
-              <input type="text"  class="form-control"  placeholder="Enter price">
-            </div>
-            <div class="form-group my-btn">
-              <input type="submit" class="btn btn-primary" value="ADD">
-              <input type="button" class="btn btn-danger" value="CANCEL">
-            </div>
-          </form>
-        </div>
+      <div style="margin:20px" *ngIf="isShowForm">
+        <h2>Add Product</h2>
+        <form action="">
+          <div class="form-group">
+            <label class="col-sm-2">Name: </label>
+            <input type="text" class="form-control" placeholder="Enter product name">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2">Price: </label>
+            <input type="text"  class="form-control"  placeholder="Enter price">
+          </div>
+          <div class="form-group my-btn">
+            <input type="submit" class="btn btn-primary" value="ADD">
+            <input type="button" class="btn btn-danger" value="CANCEL"
+            (click)="toggleForm()">
+          </div>
+        </form>
+      </div>
       <div style="margin:20px" >
-        <button class="btn btn-success">Add</button>
+        <button class="btn btn-success" style="width:47.5%"
+        (click)="toggleForm()"
+        *ngIf="!isShowForm">Add New Product</button>
       </div>
       <div style="margin:20px" >
         <select class="form-control mg-20">
