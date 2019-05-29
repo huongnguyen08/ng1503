@@ -2,6 +2,14 @@
   <div class="row justify-content-center">
     <div class="col-6">
       <button class="btn btn-success btn-add">Add</button>
+      
+      <div style="margin:20px" >
+        <select class="form-control mg-20">
+          <option value="SHOW_ALL">SHOW ALL</option>
+          <option value="WISHLIST">SHOW WISHLIST</option>
+          <option value="NONE_WISHLIST">SHOW NONE WISHLIST</option>
+        </select>
+      </div>
       <div style="margin:20px" 
       *ngFor="let product of products">
         <div class="card">
