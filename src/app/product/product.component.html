@@ -30,22 +30,20 @@
       </div>
       <div style="margin:20px" >
         <select class="form-control mg-20"
-        [(ngModel)]="filterMode" >
+        (change)="changeFilterMode($event.target.value)">
           <option value="SHOW_ALL">SHOW ALL</option>
           <option value="WISHLIST">SHOW WISHLIST</option>
           <option value="NONE_WISHLIST">NONE WISHLIST</option>
         </select>
+        <h2>{{filterMode}}</h2> 
         <!-- 
           <h2>{{filterMode}}</h2> 
           [(ngModel)] : two way binding
         -->
       </div>
       <div style="margin:20px" 
-      *ngFor="let product of products">
-        <div class="card"
-        *ngIf="filterMode==='SHOW_ALL' ||
-        (filterMode==='WISHLIST' && product.wishlist) ||
-        (filterMode==='NONE_WISHLIST' && !product.wishlist)">
+      *ngFor="let product of productFilterred">
+        <div class="card">
           <div class="card-body">
             <div class="name">
               <h5 class="card-title">{{product.name}}</h5>

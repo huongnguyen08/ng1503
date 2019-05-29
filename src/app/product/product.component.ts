@@ -48,4 +48,16 @@ export class ProductComponent implements OnInit {
     this.formAddProduct.setValue({ name: '', price: 0});
     this.toggleForm();
   }
+  changeFilterMode(input: string) {
+    this.filterMode = input;
+  }
+  get productFilterred(): Product[] {
+    if (this.filterMode === 'WISHLIST') {
+      return this.products.filter(product => product.wishlist === true);
+    }
+    if (this.filterMode === 'NONE_WISHLIST') {
+      return this.products.filter(product => product.wishlist === false);
+    }
+    return this.products;
+  }
 }
