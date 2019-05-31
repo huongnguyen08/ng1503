@@ -4,10 +4,17 @@ import { Component } from '@angular/core';
     selector: 'app-parent',
     template: `
         <h2>Parent</h2>
-        <app-children></app-children>
+        <p>{{number}}</p>
+        <app-children
+        [valueFromParent]="number"
+        (sendToParent)="getData($event)"
+        ></app-children>
 
     `
 })
 export class ParentComponent {
     number = 1;
+    getData(data: number) {
+        this.number = data;
+    }
 }
