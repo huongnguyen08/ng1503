@@ -17,8 +17,8 @@ export class ProductComponent implements OnInit {
 
   }
 
-  toggleForm(): boolean {
-    return this.isShowForm = !this.isShowForm;
+  receiveToggleForm(mode) {
+    return this.isShowForm = mode;
   }
 
   get productFilterred(): Product[] {

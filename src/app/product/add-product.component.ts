@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddProductComponent implements OnInit {
     @Input() showForm: boolean;
+    @Output() changeForm = new EventEmitter();
+
     formAddProduct: FormGroup;
 
     constructor( private fb: FormBuilder) {}
@@ -16,6 +18,10 @@ export class AddProductComponent implements OnInit {
             name: ['', Validators.required],
             price: ['0', Validators.required]
           });
+    }
+    toggleForm() {
+        console.log(this.showForm);
+        this.changeForm.emit(!this.showForm);
     }
 
     addProduct() {
