@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Product, listProduct } from '../products-list';
 
 @Component({
     selector: 'app-add-product',
@@ -9,7 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddProductComponent implements OnInit {
     @Input() showForm: boolean;
     @Output() changeForm = new EventEmitter();
-
+    // @Input() products: Product[];
+     products: Product[] = listProduct;
     formAddProduct: FormGroup;
 
     constructor( private fb: FormBuilder) {}
@@ -25,11 +27,12 @@ export class AddProductComponent implements OnInit {
     }
 
     addProduct() {
-        // const { name, price } = this.formAddProduct.value;
-        // const id = Date.now().toString();
-        // this.products.unshift({id, name, price, wishlist: false});
-        // this.formAddProduct.setValue({ name: '', price: 0});
-        // this.toggleForm();
+        const { name, price } = this.formAddProduct.value;
+        console.log( name, price );
+        const id = Date.now().toString();
+        this.products.unshift({id, name, price, wishlist: false});
+        this.formAddProduct.setValue({ name: '', price: 0});
+        this.toggleForm();
       }
 
 }
