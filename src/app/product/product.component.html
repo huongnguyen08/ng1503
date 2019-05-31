@@ -2,6 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-6">
         <app-add-product
+        [products]="products"
         [showForm]="isShowForm"
         (changeForm)="receiveToggleForm($event)"
         ></app-add-product>

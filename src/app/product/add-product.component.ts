@@ -10,8 +10,7 @@ import { Product, listProduct } from '../products-list';
 export class AddProductComponent implements OnInit {
     @Input() showForm: boolean;
     @Output() changeForm = new EventEmitter();
-    // @Input() products: Product[];
-     products: Product[] = listProduct;
+    @Input() products: Product[];
     formAddProduct: FormGroup;
 
     constructor( private fb: FormBuilder) {}
@@ -22,7 +21,6 @@ export class AddProductComponent implements OnInit {
           });
     }
     toggleForm() {
-        console.log(this.showForm);
         this.changeForm.emit(!this.showForm);
     }
 

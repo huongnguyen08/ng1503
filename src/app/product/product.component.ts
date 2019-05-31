@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
 
   }
 
-  receiveToggleForm(mode) {
+  receiveToggleForm(mode: boolean): boolean {
     return this.isShowForm = mode;
   }
 
