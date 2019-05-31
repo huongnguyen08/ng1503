@@ -1,0 +1,24 @@
+<div style="margin:20px">
+    <h2>Add Product</h2>
+    <form 
+    [formGroup]="formAddProduct"
+    (submit)="addProduct()">
+      <div class="form-group">
+        <label class="col-sm-2">Name: </label>
+        <input type="text" class="form-control" placeholder="Enter product name"
+        formControlName="name">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2">Price: </label>
+        <input type="text"  class="form-control"  placeholder="Enter price"
+        formControlName="price">
+      </div>
+      <div class="form-group my-btn">
+        <input type="submit" class="btn btn-primary" value="ADD" [disabled]="formAddProduct.invalid">
+        <input type="button" class="btn btn-danger" value="CANCEL">
+      </div>
+    </form>
+  </div>
+  <div style="margin:20px" >
+    <button class="btn btn-success" style="width:47.5%">Add New Product</button>
+  </div>

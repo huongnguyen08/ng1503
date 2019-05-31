@@ -10,6 +10,9 @@ import { SignupComponent } from './signup/signup.component';
 import { ProductComponent } from './product/product.component';
 import { ChildrenComponent } from './interact/children.component';
 import { ParentComponent } from './interact/parent.component';
+import { AddProductComponent } from './product/add-product.component';
+import { ItemProductComponent } from './product/item-product.component';
+import { FilterProductComponent } from './product/filter-product.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ParentComponent } from './interact/parent.component';
     SignupComponent,
     ProductComponent,
     ChildrenComponent,
-    ParentComponent
+    ParentComponent,
+    AddProductComponent,
+    ItemProductComponent,
+    FilterProductComponent
   ],
   imports: [
     BrowserModule,

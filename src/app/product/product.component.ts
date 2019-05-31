@@ -11,20 +11,11 @@ export class ProductComponent implements OnInit {
 
   products: Product[] = listProduct;
   isShowForm = false;
-  formAddProduct: FormGroup;
   filterMode = 'SHOW_ALL';
 
   constructor(private fb: FormBuilder) { }
   ngOnInit() {
-    this.formAddProduct = this.fb.group({
-      name: ['', Validators.required],
-      price: ['0', Validators.required]
-    });
 
-    // this.formAddProduct = new FormGroup({
-    //   name: new FormControl('', Validators.required),
-    //   price: new FormControl('0', Validators.required)
-    // });
   }
 
   setWishlist(id: string) {
