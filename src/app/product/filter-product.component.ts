@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
 })
 export class FilterProductComponent {
 
+    changeFilterMode(input: string) {
+        // this.filterMode = input;
+      }
 }
