@@ -1,9 +1,13 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-        <app-add-product></app-add-product>
+        <app-add-product
+        [showForm]="isShowForm"
+        ></app-add-product>
         <app-filter-product></app-filter-product>
-        <app-item-product></app-item-product>
+        <app-item-product 
+        [productList]="products"
+        ></app-item-product>
     </div>
   </div>
 </div>

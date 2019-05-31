@@ -1,4 +1,4 @@
-<div style="margin:20px">
+<div style="margin:20px" *ngIf="showForm">
     <h2>Add Product</h2>
     <form 
     [formGroup]="formAddProduct"
@@ -19,6 +19,6 @@
       </div>
     </form>
   </div>
-  <div style="margin:20px" >
+  <div style="margin:20px"  *ngIf="!showForm">
     <button class="btn btn-success" style="width:47.5%">Add New Product</button>
   </div>

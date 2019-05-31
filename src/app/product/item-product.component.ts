@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '../products-list';
 @Component({
     selector: 'app-item-product',
-    templateUrl: './item-product.component.html'
+    templateUrl: './item-product.component.html',
+    styleUrls: [ './product.component.css' ]
 })
 export class ItemProductComponent {
+    @Input() productList: Product[];
+
+
+
 
 
   setWishlist(id: string) {
