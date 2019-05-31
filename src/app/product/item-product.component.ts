@@ -6,21 +6,17 @@ import { Product } from '../products-list';
     styleUrls: [ './product.component.css' ]
 })
 export class ItemProductComponent {
-    @Input() productList: Product[];
-
-
-
-
+  @Input() productList: Product[];
 
   setWishlist(id: string) {
-    // const product: Product = this.products.find(p => p.id === id);
-    // product.wishlist = !product.wishlist;
+    const product: Product = this.productList.find(p => p.id === id);
+    product.wishlist = !product.wishlist;
   }
   removeProduct(id: string) {
-    // const index: number = this.products.findIndex( p =>  p.id === id);
-    // if ( index >= 0 ) {
-    //   return this.products.splice(index, 1);
-    // }
-    // alert('Cannot find product!');
+    const index: number = this.productList.findIndex( p =>  p.id === id);
+    if ( index >= 0 ) {
+      return this.productList.splice(index, 1);
+    }
+    alert('Cannot find product!');
   }
 }
