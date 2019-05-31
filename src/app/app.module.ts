@@ -8,7 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroComponent } from './components/hero.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProductComponent } from './product/product.component';
-
+import { ChildrenComponent } from './interact/children.component';
+import { ParentComponent } from './interact/parent.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { ProductComponent } from './product/product.component';
     UserComponent,
     HeroComponent,
     SignupComponent,
-    ProductComponent
+    ProductComponent,
+    ChildrenComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,
