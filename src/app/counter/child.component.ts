@@ -16,6 +16,6 @@ export class ChildComponent implements OnInit {
 
     ngOnInit() { }
     increase() {
-        
+        this.store.dispatch({ type: 'INCREASE' });
     }
 }
