@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
     selector: 'app-child',
@@ -10,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ChildComponent implements OnInit {
-    constructor() { }
+
+    constructor(private store: Store<number>) { }
 
     ngOnInit() { }
+    increase() {
+        
+    }
 }
