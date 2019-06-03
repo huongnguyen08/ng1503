@@ -6,16 +6,18 @@ import { Observable } from 'rxjs';
   selector: 'app-counter',
   // templateUrl: './counter.component.html',
   template: `
-    <h2>{{myCount | async }}</h2>
+    <h2>{{ myCount }}</h2>
   `,
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
 
-  myCount: Observable<number>;
+  myCount: number;
   constructor(private store: Store<number>) {
     // get data from store
-    this.myCount = this.store.pipe(select('counter'));
+    // this.myCount = this.store.pipe(select('counter'));
+
+    this.store.select('counter').subscribe(c => this.myCount = c);
   }
 
   ngOnInit() {
