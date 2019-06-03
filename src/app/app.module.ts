@@ -17,6 +17,7 @@ import { FilterProductComponent } from './product/filter-product.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './ngrxstore/reducer';
 import { CounterComponent } from './counter/counter.component';
+import { ChildComponent } from './counter/child.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CounterComponent } from './counter/counter.component';
     ItemProductComponent,
     FilterProductComponent,
     CounterComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,

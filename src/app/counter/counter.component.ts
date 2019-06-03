@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   // templateUrl: './counter.component.html',
   template: `
     <h2>{{ myCount }}</h2>
+    <app-child></app-child>
   `,
   styleUrls: ['./counter.component.css']
 })
