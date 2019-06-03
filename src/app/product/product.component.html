@@ -6,7 +6,9 @@
         [showForm]="isShowForm"
         (changeForm)="receiveToggleForm($event)"
         ></app-add-product>
-        <app-filter-product></app-filter-product>
+        <app-filter-product
+        [filterMode]="filterMode"
+        ></app-filter-product>
         <app-item-product 
         [productList]="products"
         ></app-item-product>

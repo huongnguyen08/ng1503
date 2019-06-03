@@ -14,7 +14,6 @@ export class ProductComponent implements OnInit {
 
   constructor() { }
   ngOnInit() {
-
   }
 
   receiveToggleForm(mode: boolean): boolean {
