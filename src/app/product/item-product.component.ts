@@ -7,7 +7,7 @@ import { Product } from '../products-list';
 })
 export class ItemProductComponent {
   @Input() productList: Product[];
-
+  @Input() filterMode: string;
   setWishlist(id: string) {
     const product: Product = this.productList.find(p => p.id === id);
     product.wishlist = !product.wishlist;
@@ -18,5 +18,14 @@ export class ItemProductComponent {
       return this.productList.splice(index, 1);
     }
     alert('Cannot find product!');
+  }
+  get productFilterred(): Product[] {
+    if (this.filterMode === 'WISHLIST') {
+      return this.productList.filter(product => product.wishlist === true);
+    }
+    if (this.filterMode === 'NONE_WISHLIST') {
+      return this.productList.filter(product => product.wishlist === false);
+    }
+    return this.productList;
   }
 }

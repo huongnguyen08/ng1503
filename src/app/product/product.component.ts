@@ -20,15 +20,7 @@ export class ProductComponent implements OnInit {
     return this.isShowForm = mode;
   }
 
-  get productFilterred(): Product[] {
-    if (this.filterMode === 'WISHLIST') {
-      return this.products.filter(product => product.wishlist === true);
-    }
-    if (this.filterMode === 'NONE_WISHLIST') {
-      return this.products.filter(product => product.wishlist === false);
-    }
-    return this.products;
-  }
+ 
   getFilterMode(data: string) {
     return this.filterMode = data;
   }
