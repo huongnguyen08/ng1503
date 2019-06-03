@@ -5,11 +5,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FilterProductComponent {
 
-    @Input() filterMode: string;
-    @Output() filter = new EventEmitter();
+    @Input() inputFilterMode: string;
+    @Output() filterMode = new EventEmitter();
 
     changeFilterMode(input: string) {
-        console.log(input);
-        this.filter.emit(input);
+        this.filterMode.emit(input);
     }
 }

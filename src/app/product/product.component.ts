@@ -30,7 +30,6 @@ export class ProductComponent implements OnInit {
     return this.products;
   }
   getFilterMode(data: string) {
-    console.log(1);
     return this.filterMode = data;
   }
 }

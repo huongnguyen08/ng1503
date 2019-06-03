@@ -7,8 +7,8 @@
         (changeForm)="receiveToggleForm($event)"
         ></app-add-product>
         <app-filter-product
-        [filterMode]="filterMode"
-        (changeFilterMode)="getFilterMode($event)"
+        [inputFilterMode]="filterMode"
+        (filterMode)="getFilterMode($event)"
         ></app-filter-product>
         <app-item-product 
         [productList]="products"
