@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'app-filter-product',
     templateUrl: './filter-product.component.html'
@@ -6,8 +6,10 @@ import { Component, Input } from '@angular/core';
 export class FilterProductComponent {
 
     @Input() filterMode: string;
+    @Output() filter = new EventEmitter();
 
     changeFilterMode(input: string) {
-        // this.filterMode = input;
+        console.log(input);
+        this.filter.emit(input);
     }
 }
