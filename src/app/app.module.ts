@@ -14,6 +14,10 @@ import { AddProductComponent } from './product/add-product.component';
 import { ItemProductComponent } from './product/item-product.component';
 import { FilterProductComponent } from './product/filter-product.component';
 
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './ngrxstore/reducer';
+import { CouterComponent } from './couter/couter.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +29,17 @@ import { FilterProductComponent } from './product/filter-product.component';
     ParentComponent,
     AddProductComponent,
     ItemProductComponent,
-    FilterProductComponent
+    FilterProductComponent,
+    CouterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({
+      couter: counterReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
