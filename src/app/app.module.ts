@@ -16,7 +16,7 @@ import { FilterProductComponent } from './product/filter-product.component';
 
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './ngrxstore/reducer';
-import { CouterComponent } from './couter/couter.component';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { CouterComponent } from './couter/couter.component';
     AddProductComponent,
     ItemProductComponent,
     FilterProductComponent,
-    CouterComponent
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +38,7 @@ import { CouterComponent } from './couter/couter.component';
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({
-      couter: counterReducer
+      counter: counterReducer
     })
   ],
   providers: [],
