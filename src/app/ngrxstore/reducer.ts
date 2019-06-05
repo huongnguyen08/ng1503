@@ -17,8 +17,8 @@ export function counterReducer(state: number = 0, action: Action) {
 // state: pure
 export function productReducer(state: Array<Product> = listProduct, action: any) {
     if (action.type === 'ADD_PRODUCT') {
-        // add product into state
-        return state;
+        // action.product
+        return state.concat(action.product);
     }
     if (action.type === 'TOGGLE_WISHLIST') {
         // idProduct
