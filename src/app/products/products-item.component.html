@@ -1,16 +1,16 @@
-<div  style="margin:20px">
+<div style="margin:20px" *ngFor="let product of products">
     <div class="card">
         <div class="card-body">
             <div class="name">
-                <h5 class="card-title">Apple Iphone Xs</h5>
-                <p><i class="fas fa-heart"></i></p>
+                <h5 class="card-title">{{product.name}}</h5>
+                <p *ngIf="product.wishlist" ><i class="fas fa-heart"></i></p>
             </div>
             
-            <p class="card-text">22.000.000</p>
+            <p class="card-text">{{product.price | number}}</p>
             <div class="button">
-                <!-- <a class="btn btn-primary" 
-                >Add to Wishlist</a> -->
-                <a class="btn btn-warning"
+                <a *ngIf="!product.wishlist" class="btn btn-primary" 
+                >Add to Wishlist</a>
+                <a *ngIf="product.wishlist"  class="btn btn-warning"
                 >Remove to Wishlist</a>
                 <a class="btn btn-danger" 
                 >Remove</a>
