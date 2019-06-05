@@ -35,6 +35,12 @@ export function productReducer(state: Array<Product> = listProduct, action: any)
     }
     return state;
 }
+export function toggleFormAddProduct(state: boolean = false, action: any) {
+    if (action.type === 'TOGGLE_FORM') {
+        return action.status; // status: boolean
+    }
+    return state;
+}
 /**
  * 1. dinh nghia reducer
  * 2. khai bao reducer App Module
