@@ -13,6 +13,7 @@
                 <a *ngIf="product.wishlist"  class="btn btn-warning"
                 >Remove to Wishlist</a>
                 <a class="btn btn-danger" 
+                (click)="removeProduct(product.id)"
                 >Remove</a>
             </div>
         </div>

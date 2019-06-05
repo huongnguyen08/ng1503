@@ -14,10 +14,14 @@ export function counterReducer(state: number = 0, action: Action) {
     return state;
 }
 
-export function productReducer(state: Array<Product> = listProduct, action: Action) {
+// state: pure
+export function productReducer(state: Array<Product> = listProduct, action: any) {
     if (action.type === 'ADD_PRODUCT') {
         // add product into state
         return state;
+    }
+    if (action.type === 'REMOVE_PRODUCT') {
+        return state.filter(product => product.id !== action.idProduct);
     }
     return state;
 }

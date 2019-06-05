@@ -17,5 +17,11 @@ export class ProductsItemComponent {
             listProduct => this.products = listProduct
         );
     }
+    removeProduct(id: number) {
+        this.store.dispatch({
+            type: 'REMOVE_PRODUCT',
+            idProduct: id
+        });
+    }
 }
 
