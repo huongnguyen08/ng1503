@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Product } from '../products-list';
 
 @Component({
     selector: 'app-products-item',
@@ -6,7 +8,14 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./products.component.css']
 })
 export class ProductsItemComponent {
-    constructor() {
+    products: Array<Product>;
+
+    constructor(private store: Store<Array<Product>>) {
+        // get state default from productReducer
+        // select('products') : products: StoreModule.forRoot
+        this.store.select('products').subscribe(
+            listProduct => this.products = listProduct
+        );
     }
 }
 
