@@ -27,4 +27,7 @@ export class ProductsFormComponent implements OnInit {
             ]],
         });
     }
+    toggleForm() {
+        this.store.dispatch({ type: 'TOGGLE_FORM', status: !this.isShowForm });
+    }
 }
