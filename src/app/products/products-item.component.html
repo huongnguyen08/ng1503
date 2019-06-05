@@ -8,9 +8,14 @@
             
             <p class="card-text">{{product.price | number}}</p>
             <div class="button">
-                <a *ngIf="!product.wishlist" class="btn btn-primary" 
+                <a 
+                *ngIf="!product.wishlist" 
+                (click)="setWishList(product.id)"
+                class="btn btn-primary" 
                 >Add to Wishlist</a>
-                <a *ngIf="product.wishlist"  class="btn btn-warning"
+                <a *ngIf="product.wishlist" 
+                (click)="setWishList(product.id)"
+                class="btn btn-warning"
                 >Remove to Wishlist</a>
                 <a class="btn btn-danger" 
                 (click)="removeProduct(product.id)"

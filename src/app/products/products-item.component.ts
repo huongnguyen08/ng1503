@@ -23,5 +23,11 @@ export class ProductsItemComponent {
             idProduct: id
         });
     }
+    setWishList(id: number) {
+        this.store.dispatch({
+            type: 'TOGGLE_WISHLIST',
+            idProduct: id
+        });
+    }
 }
 

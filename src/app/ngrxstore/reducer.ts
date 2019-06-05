@@ -20,6 +20,16 @@ export function productReducer(state: Array<Product> = listProduct, action: any)
         // add product into state
         return state;
     }
+    if (action.type === 'TOGGLE_WISHLIST') {
+        // idProduct
+        return state.map(product => {
+            if (product.id === action.idProduct) {
+                product.wishlist = !product.wishlist;
+                return product;
+            }
+            return product;
+        });
+    }
     if (action.type === 'REMOVE_PRODUCT') {
         return state.filter(product => product.id !== action.idProduct);
     }
