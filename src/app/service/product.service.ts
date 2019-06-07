@@ -12,7 +12,20 @@ export class ProductService {
     async getListProduct(): Promise<Array<Product>> {
         return this.http.get(`${this.url}product`)
         .toPromise()
-        .then((result: any) => Promise.resolve(result))
+        .then((result: Result) => {
+            if (result.success) {
+                return Promise.resolve(result.products);
+            } else {
+                throw new Error('Cannot get product!');
+            }
+        })
         .catch(err => Promise.reject(err));
     }
+}
+
+interface Result {
+    success: boolean;
+    message?: string;
+    product?: Product;
+    products?: Array<Product>;
 }

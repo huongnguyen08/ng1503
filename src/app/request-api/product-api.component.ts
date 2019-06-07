@@ -19,6 +19,6 @@ export class ProductApiComponent {
     constructor(private productService: ProductService) {
         this.productService.getListProduct()
         .then(result => console.log(result))
-        .catch(err => console.log(err));
+        .catch(err => console.log({ err: err.message}));
     }
 }
