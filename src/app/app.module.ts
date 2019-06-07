@@ -24,6 +24,7 @@ import { ProductsItemComponent } from './products/products-item.component';
 import { ProductsFilterComponent } from './products/products-filter.component';
 
 import { WeatherComponent } from './request-api/weather.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { WeatherComponent } from './request-api/weather.component';
       counter: counterReducer,
       products: productReducer,
       toggleForm: toggleFormAddProduct
-    })
+    }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
