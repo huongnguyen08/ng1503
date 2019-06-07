@@ -24,6 +24,7 @@ import { ProductsItemComponent } from './products/products-item.component';
 import { ProductsFilterComponent } from './products/products-filter.component';
 
 import { WeatherComponent } from './request-api/weather.component';
+import { ProductApiComponent } from './request-api/product-api.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -44,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsFormComponent,
     ProductsItemComponent,
     ProductsFilterComponent,
-    WeatherComponent
+    WeatherComponent,
+    ProductApiComponent
   ],
   imports: [
     BrowserModule,
