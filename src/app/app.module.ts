@@ -26,6 +26,7 @@ import { ProductsFilterComponent } from './products/products-filter.component';
 import { WeatherComponent } from './request-api/weather.component';
 import { ProductApiComponent } from './request-api/product-api.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from './service/product.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
     }),
     HttpClientModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
