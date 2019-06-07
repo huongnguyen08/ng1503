@@ -17,7 +17,10 @@ export class ProductApiComponent {
     // }
 
     constructor(private productService: ProductService) {
-        this.productService.getListProduct()
+        // this.productService.getListProduct()
+        // .then(result => console.log(result))
+        // .catch(err => console.log({ err: err.message}));
+        this.productService.addProduct('San pham B', 200000)
         .then(result => console.log(result))
         .catch(err => console.log({ err: err.message}));
     }

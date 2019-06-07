@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../products-list';
+import { throwError } from 'rxjs';
 
 @Injectable()
 
@@ -17,6 +18,20 @@ export class ProductService {
                 return Promise.resolve(result.products);
             } else {
                 throw new Error('Cannot get product!');
+            }
+        })
+        .catch(err => Promise.reject(err));
+    }
+    async addProduct(name: string, price: number): Promise<Product> {
+        return this.http.post(
+            `${this.url}add-product`,
+            { name, price }
+        ).toPromise()
+        .then((result: Result) => {
+            if (result.success) {
+                return result.product;
+            } else {
+                throw new Error(result.message);
             }
         })
         .catch(err => Promise.reject(err));
