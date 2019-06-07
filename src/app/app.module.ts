@@ -23,6 +23,8 @@ import { ProductsFormComponent } from './products/products-form.component';
 import { ProductsItemComponent } from './products/products-item.component';
 import { ProductsFilterComponent } from './products/products-filter.component';
 
+import { WeatherComponent } from './request-api/weather.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import { ProductsFilterComponent } from './products/products-filter.component';
     ProductsComponent,
     ProductsFormComponent,
     ProductsItemComponent,
-    ProductsFilterComponent
+    ProductsFilterComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
