@@ -1,28 +1,22 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../service/product.service';
 import { Product } from '../products-list';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-product-api',
-    template: `
-        <div *ngFor="let product of listProduct ">
-            <p><b>Name: {{product.name}}</b></p>
-            <p>Price: {{product.price | number}}</p>
-            <hr>
-        </div>
-    `
+    templateUrl: 'product-api.component.html'
 })
 export class ProductApiComponent {
     listProduct: Product[];
+    formAddProduct: FormGroup;
 
-    // constructor(private http: HttpClient) {
-    //     this.http.get(this.url)
-    //     .toPromise()
-    //     .then(result => console.log(result))
-    //     .catch(err => console.log(err.message));
-    // }
+    constructor(private productService: ProductService, private fb: FormBuilder) {
+        this.formAddProduct = this.fb.group({
+            name : ['', Validators.required],
+            price : ['0', Validators.required]
+        });
 
-    constructor(private productService: ProductService) {
         this.productService.getListProduct()
         .then(result => this.listProduct = result)
         .catch(err => console.log({ err: err.message}));

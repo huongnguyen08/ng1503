@@ -1,0 +1,21 @@
+<div style="text-align:center">
+    <h3>Add Product</h3>
+
+    <form [formGroup]="formAddProduct" (submit)="addProduct()">
+        <div>
+            <input type="text" formControlName="name" placeholder="Name">
+        </div>
+        <br>
+        <div>
+            <input type="text" formControlName="price" placeholder="Price">
+        </div>
+        <br>
+        <button [disabled]="formAddProduct.invalid" class="btn btn-success">SAVE</button>
+    </form>
+    <hr>
+    <div *ngFor="let product of listProduct ">
+        <p><b>Name: {{product.name}}</b></p>
+        <p>Price: {{product.price | number}}</p>
+        <hr>
+    </div>
+</div>
