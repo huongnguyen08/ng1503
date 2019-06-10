@@ -41,6 +41,16 @@ export function toggleFormAddProduct(state: boolean = false, action: any) {
     }
     return state;
 }
+export function productAPIReducer(state: Array<Product> = null, action: any) {
+    if (action.type === 'ADD_PRODUCT_API') {
+        return state.concat(action.product);
+    }
+    if (action.type === 'INIT_PRODUCT_API') {
+        return action.products;
+    }
+    return state;
+}
+
 /**
  * 1. dinh nghia reducer
  * 2. khai bao reducer App Module

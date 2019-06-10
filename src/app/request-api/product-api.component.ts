@@ -21,4 +21,11 @@ export class ProductApiComponent {
         .then(result => this.listProduct = result)
         .catch(err => console.log({ err: err.message}));
     }
+    addProduct() {
+        const { name, price } = this.formAddProduct.value;
+        this.productService.addProduct(name, price)
+        .then(product => {
+            
+        })
+    }
 }
