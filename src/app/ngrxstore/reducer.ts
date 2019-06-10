@@ -49,7 +49,7 @@ export function productAPIReducer(state: Array<Product> = null, action: any) {
         return state.concat(action.product);
     }
     if (action.type === 'DELETE_PRODUCT_API') {
-        return state.filter(product => product.id !== action.idProduct);
+        return state.filter((product: any) => product._id !== action.idProduct);
     }
     return state;
 }

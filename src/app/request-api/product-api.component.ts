@@ -44,6 +44,13 @@ export class ProductApiComponent {
         .catch(err => console.log({ err: err.message}));
     }
     deleteProduct(id: string) {
-        
+        this.productService.removeProduct(id)
+        .then((result: any) => {
+            this.store.dispatch({
+                type: 'DELETE_PRODUCT_API',
+                idProduct: result._id
+            });
+        })
+        .catch(err => console.log({ err: err.message}));
     }
 }
