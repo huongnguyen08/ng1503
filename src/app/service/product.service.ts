@@ -36,6 +36,18 @@ export class ProductService {
         })
         .catch(err => Promise.reject(err));
     }
+    async removeProduct(id: string) {
+        return this.http.delete(`${this.url}product/${id}`)
+        .toPromise()
+        .then((result: Result) => {
+            if (result.success) {
+                return result.product;
+            } else {
+                throw new Error(result.message);
+            }
+        })
+        .catch(err => Promise.reject(err));
+    }
 }
 
 interface Result {

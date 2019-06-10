@@ -43,4 +43,7 @@ export class ProductApiComponent {
         })
         .catch(err => console.log({ err: err.message}));
     }
+    deleteProduct(id: string) {
+        
+    }
 }
