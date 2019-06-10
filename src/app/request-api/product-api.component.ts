@@ -34,8 +34,13 @@ export class ProductApiComponent {
     addProduct() {
         const { name, price } = this.formAddProduct.value;
         this.productService.addProduct(name, price)
-        .then(product => {
-
+        .then(result => {
+            this.store.dispatch({
+                type: 'ADD_PRODUCT_API',
+                product: result
+            });
+            this.formAddProduct.setValue({name: '', price: '0'});
         })
+        .catch(err => console.log({ err: err.message}));
     }
 }

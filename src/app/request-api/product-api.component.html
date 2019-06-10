@@ -16,6 +16,10 @@
     <div *ngFor="let product of listProduct ">
         <p><b>Name: {{product.name}}</b></p>
         <p>Price: {{product.price | number}}</p>
+        <button (click)="updateProduct(product._id)">Update</button>
+        <button (click)="deleteProduct(product._id)">Delete</button>
+
+        <!-- <pre> {{ product | json }}</pre> -->
         <hr>
     </div>
 </div>
