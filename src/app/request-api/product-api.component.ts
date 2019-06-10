@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../service/product.service';
+import { Product } from '../products-list';
 
 @Component({
     selector: 'app-product-api',
     template: `
+        <div *ngFor="let product of listProduct ">
+            <p><b>Name: {{product.name}}</b></p>
+            <p>Price: {{product.price | number}}</p>
+            <hr>
+        </div>
     `
 })
 export class ProductApiComponent {
-    // url = 'http://localhost:3000/';
+    listProduct: Product[];
 
     // constructor(private http: HttpClient) {
     //     this.http.get(this.url)
@@ -17,11 +23,8 @@ export class ProductApiComponent {
     // }
 
     constructor(private productService: ProductService) {
-        // this.productService.getListProduct()
-        // .then(result => console.log(result))
-        // .catch(err => console.log({ err: err.message}));
-        this.productService.addProduct('San pham B', 200000)
-        .then(result => console.log(result))
+        this.productService.getListProduct()
+        .then(result => this.listProduct = result)
         .catch(err => console.log({ err: err.message}));
     }
 }
